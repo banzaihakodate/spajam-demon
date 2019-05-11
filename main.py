@@ -36,7 +36,7 @@ try:
 
         if not doc1 is '':
             while True:
-                flag = db.collection('rooms').document(doc1).get().to_dict()['IsHoi']
+                flag = db.collection('rooms').document(doc1).get().exists
                 if not flag:
                     break
 
