@@ -6,7 +6,8 @@ from time import sleep
 
 db = fs.firestore_init()
 
-while True:
+try:
+    while True:
         doc1, doc2 = '', ''
         docs = db.collection('rooms').where('IsHoi', '==', True).get()
         for doc in docs:
@@ -42,3 +43,7 @@ while True:
 
                 
 	sleep(1)
+
+
+except KeyboardInterrupt:
+        print("finished")
